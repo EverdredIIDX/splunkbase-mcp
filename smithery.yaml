@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - splunkbaseUsername
+      - splunkbasePassword
+    properties:
+      splunkbaseUsername:
+        type: string
+        description: Splunkbase username for authentication
+      splunkbasePassword:
+        type: string
+        description: Splunkbase password for authentication
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'python',
+      args: ['splunkbase-mcp.py'],
+      env: {
+        SPLUNKBASE_USERNAME: config.splunkbaseUsername,
+        SPLUNKBASE_PASSWORD: config.splunkbasePassword
+      }
+    })
+  exampleConfig:
+    splunkbaseUsername: demo_user
+    splunkbasePassword: demo_pass

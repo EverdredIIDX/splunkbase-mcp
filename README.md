@@ -1,5 +1,7 @@
 # splunkbase-mcp
 
+[![smithery badge](https://smithery.ai/badge/@cschmidt0121/splunkbase-mcp)](https://smithery.ai/server/@cschmidt0121/splunkbase-mcp)
+
 An MCP server for Splunkbase
 
 ## Description
@@ -7,6 +9,16 @@ An MCP server for Splunkbase
 This is a Machine Control Protocol (MCP) server that provides programmatic access to Splunkbase functionality. It allows you to search, download, and manage Splunkbase apps through a standardized interface.
 
 ## Installation 
+
+### Installing via Smithery
+
+To install Splunkbase MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@cschmidt0121/splunkbase-mcp):
+
+```bash
+npx -y @smithery/cli install @cschmidt0121/splunkbase-mcp --client claude
+```
+
+### Manual Installation
 
 Warning: this will store your password on-disk in plaintext. Better methods may come about eventually.
 
@@ -58,4 +70,3 @@ Please do the following.
 - mcp[cli]
 - aiofiles
 - Python >= 3.11 
-
